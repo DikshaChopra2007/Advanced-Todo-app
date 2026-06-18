@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced To-Do App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="Todoapp">
+
+        <!-- HEADER -->
+
+        <div class="header">
+
+            <h2 class="h2">
+
+                To-do-list
+
+                <img
+                    class="img1"
+                    src="images/icon.png"
+                >
+
+            </h2>
+
+            <select id="themeSelector">
+
+                <option value="girly">
+                    🌸 Girly
+                </option>
+
+                <option value="vintage">
+                    📜 Vintage
+                </option>
+
+                <option value="harry">
+                    🕷 Harry-Potter
+                </option>
+
+            </select>
+
+        </div>
+
+        <!-- CREATE TASK SECTION -->
+
+        <div class="create-task">
+
+            <!-- TASK INPUT -->
+
+            <div class="row">
+
+                <input
+                    type="text"
+                    id="input-box"
+                    placeholder="Add your task"
+                >
+
+                <button
+                    class="add"
+                    onclick="addTask()">
+
+                    Add
+
+                </button>
+
+            </div>
+
+            <!-- CATEGORY | PRIORITY | DATE -->
+
+            <div class="task-options">
+
+                <input
+                    type="text"
+                    id="categoryInput"
+                    placeholder="Category"
+                >
+
+                <select id="priority">
+
+                    <option value="High">
+                        🔴 High
+                    </option>
+
+                    <option value="Medium">
+                        🟡 Medium
+                    </option>
+
+                    <option value="Low">
+                        🟢 Low
+                    </option>
+
+                </select>
+
+                <input
+                    type="date"
+                    id="dueDate"
+                >
+
+            </div>
+
+        </div>
+
+        <!-- SEARCH + SORT -->
+
+        <div class="search-sort">
+
+            <input
+                type="text"
+                id="searchTask"
+                placeholder="🔍 Search Tasks"
+            >
+
+            <select id="sortTasks">
+
+                <option value="default">
+                    Sort Tasks
+                </option>
+
+                <option value="priority">
+                    Priority
+                </option>
+
+                <option value="date">
+                    Due Date
+                </option>
+
+                <option value="category">
+                    Category
+                </option>
+
+            </select>
+
+        </div>
+
+        <!-- STATISTICS -->
+
+        <div class="stats">
+
+            <div>
+
+                📋
+
+                <br>
+
+                Total
+
+                <br>
+
+                <span id="totalTasks">
+                    0
+                </span>
+
+            </div>
+
+            <div>
+
+                ✅
+
+                <br>
+
+                Completed
+
+                <br>
+
+                <span id="completedTasks">
+                    0
+                </span>
+
+            </div>
+
+            <div>
+
+                ⏳
+
+                <br>
+
+                Pending
+
+                <br>
+
+                <span id="pendingTasks">
+                    0
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- PROGRESS BAR -->
+
+        <div class="progress-container">
+
+            <div
+                class="progress-bar"
+                id="progressBar">
+            </div>
+
+        </div>
+
+        <p id="progressText">
+
+            0% Complete
+
+        </p>
+
+        <!-- ACTION BUTTONS -->
+
+        <div class="action-buttons">
+
+            <button id="clearAll">
+
+                Clear All
+
+            </button>
+
+            <button id="undoBtn">
+
+                Undo Delete
+
+            </button>
+
+        </div>
+
+        <!-- TASK LIST -->
+
+        <ul id="listme">
+
+        </ul>
+
+    </div>
+
+</div>
+<div class="paper-container"></div>
+<div class="torch"></div>
+<div class="lightning"></div>
+<script src="script.js"></script>
+
+</body>
+</html>

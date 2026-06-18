@@ -1,0 +1,1604 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+html,
+body{
+
+    overflow-x:hidden;
+}
+/* PAGE */
+
+.container{
+    width:100%;
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff9a9e,
+        #fecfef,
+        #a18cd1
+    );
+
+    padding:30px 15px;
+}
+
+/* MAIN CARD */
+
+.Todoapp{
+    font-size: 20px;
+    width:min(95%,700px);
+
+    margin:50px auto;
+
+    padding:35px;
+
+    background:#f5f0ff;
+
+    border-radius:24px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.12);
+}
+
+/* HEADER */
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+}
+
+.h2{
+
+    display:flex;
+font-size:36px;
+    font-weight:700;
+    align-items:center;
+
+    color:#374151;
+}
+
+.img1{
+
+    width:65px;
+
+    height:65px;
+
+    margin-left:10px;
+}
+
+#themeSelector{
+
+    padding:10px 14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:white;
+
+    cursor:pointer;
+}
+
+/* CREATE TASK SECTION */
+
+.create-task{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    margin-bottom:25px;
+
+    box-shadow:
+    0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* INPUT */
+
+.row{
+
+    background:#f3f4f6;
+
+    border-radius:50px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding-left:20px;
+
+    margin-bottom:15px;
+}
+
+#input-box{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    padding:14px;
+
+    font-size:22px;
+
+    color:#374151;
+}
+
+.add{
+
+    border:none;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    background:#8c73c9;
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.add:hover{
+
+    transform:scale(1.05);
+
+    background:#7759c7;
+}
+
+/* TASK OPTIONS */
+
+.task-options{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr 1fr;
+
+    gap:12px;
+}
+
+.task-options input,
+.task-options select{
+
+    border:none;
+
+    outline:none;
+
+    background:#f3f4f6;
+
+    padding:12px;
+    font-size: 17px;
+    border-radius:12px;
+
+    color:#374151;
+}
+
+/* SEARCH + SORT */
+
+.search-sort{
+
+    display:flex;
+
+    gap:12px;
+
+    margin:20px 0;
+}
+
+#searchTask{
+
+    flex:2;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:white;
+}
+
+#sortTasks{
+
+    flex:1;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:white;
+}
+
+/* STATS */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:12px;
+    
+    margin-bottom:20px;
+}
+
+.stats div{
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    font-weight:600;
+    font-size: 18px;
+
+    color:#5b3d7a;
+}
+.stats span{
+
+    display:block;
+
+    margin-top:5px;
+
+    font-size:24px;
+
+    font-weight:700;
+}
+
+/* PROGRESS */
+
+.progress-container{
+
+    width:100%;
+
+    height:12px;
+
+    background:#e5e7eb;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    margin-top:10px;
+}
+
+.progress-bar{
+
+    width:0%;
+
+    height:100%;
+
+    background:#8c73c9;
+
+    border-radius:50px;
+
+    transition:0.5s ease;
+}
+
+#progressText{
+
+    text-align:center;
+
+    margin-top:10px;
+
+    margin-bottom:25px;
+
+    font-weight:600;
+    font-size:18px;
+    color:#5b3d7a;
+}
+
+/* ACTION BUTTONS */
+
+.action-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-bottom:25px;
+}
+
+.action-buttons button{
+
+    flex:1;
+
+    border:none;
+    font-size: 18px;
+    padding:14px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+/* CLEAR */
+
+#clearAll{
+
+    background:#ef4444;
+
+    color:white;
+}
+
+#clearAll:hover{
+
+    background:#dc2626;
+
+    transform:translateY(-2px);
+}
+
+/* UNDO */
+
+#undoBtn{
+
+    background:#3b82f6;
+
+    color:white;
+}
+
+#undoBtn:hover{
+
+    background:#2563eb;
+
+    transform:translateY(-2px);
+}
+
+/* TASK LIST */
+
+ul{
+
+    padding:0;
+}
+
+ul li{
+
+    list-style:none;
+
+    position:relative;
+
+    margin:15px 0;
+    font-size: 18px;
+    padding:18px 55px 18px 60px;
+
+    background:white;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 4px 12px rgba(0,0,0,0.08);
+
+    transition:0.3s;
+
+    cursor:pointer;
+}
+
+ul li:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* CHECKBOX */
+
+ul li::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:28px;
+
+    height:28px;
+
+    left:18px;
+
+    top:20px;
+
+    background-image:
+    url(images/unchecked.png);
+
+    background-size:cover;
+
+    border-radius:50%;
+}
+
+ul li.checked{
+
+    opacity:0.75;
+}
+
+ul li.checked strong{
+
+    text-decoration:line-through;
+
+    color:#9ca3af;
+}
+
+ul li.checked::before{
+
+    background-image:
+    url(images/checked.png);
+}
+
+/* TASK TITLE */
+
+ul li strong{
+
+    font-size:24px;
+
+    color:#1f2937;
+}
+
+/* TIMESTAMP */
+
+ul li small{
+
+    display:block;
+
+    margin-top:10px;
+
+    color:#6b7280;
+
+    font-size:12px;
+}
+
+/* DELETE */
+
+ul li span{
+
+    position:absolute;
+
+    right:15px;
+
+    top:15px;
+
+    width:35px;
+    font-size: 15px;
+
+    height:35px;
+
+    border-radius:50%;
+
+    line-height:35px;
+
+    text-align:center;
+
+    font-size:22px;
+
+    color:#ef4444;
+
+    transition:0.3s;
+}
+
+ul li span:hover{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+}
+
+/* OVERDUE */
+
+.overdue{
+
+    display:inline-block;
+
+    margin-left:8px;
+
+    padding:4px 8px;
+
+    border-radius:8px;
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+    font-size:12px;
+
+    font-weight:700;
+}
+/*vintage*/
+body.vintage .container{
+
+    background:
+    url("images/vintagebg.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+}
+body.vintage .Todoapp{
+
+    background:
+    rgba(244,228,188,0.92);
+
+    backdrop-filter:
+    blur(2px);
+
+    border:
+    3px solid #8b7355;
+
+    color:#5d4037;
+
+    box-shadow:
+    0 10px 25px
+    rgba(93,64,55,0.35);
+}
+body.vintage .Todoapp{
+
+    position:relative;
+
+    overflow:hidden;
+}
+body.vintage .Todoapp::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:18px;
+
+    background:
+    repeating-linear-gradient(
+        -45deg,
+        transparent 0 8px,
+        rgba(139,115,85,0.25) 8px 16px
+    );
+}
+body.vintage .h2{
+
+    color:#5d4037;
+}
+body.vintage ul li{
+
+    background:
+    rgba(255,248,220,0.9);
+
+    color:#5d4037;
+
+    border-left:
+    6px solid #8b7355;
+}
+body.vintage *{
+
+    font-family:
+    Georgia,
+    serif;
+}
+body.vintage .add{
+
+    background:#8b7355;
+}
+
+body.vintage #undoBtn{
+
+    background:#a67b5b;
+}
+
+body.vintage #clearAll{
+
+    background:#6f4e37;
+}
+body.vintage .progress-bar{
+
+    background:#8b7355;
+}
+.paper-piece{
+
+    position:fixed;
+
+    top:-30px;
+
+    width:14px;
+    height:14px;
+
+    background:#d2b48c;
+
+    opacity:0.7;
+
+    z-index:1;
+
+    pointer-events:none;
+
+    animation:fallPaper 12s linear forwards;
+}
+
+@keyframes fallPaper{
+
+    0%{
+
+        transform:
+        translateY(-30px)
+        rotate(0deg);
+
+        opacity:0;
+    }
+
+    10%{
+
+        opacity:0.8;
+    }
+
+    100%{
+
+        transform:
+        translateY(110vh)
+        translateX(80px)
+        rotate(720deg);
+
+        opacity:0;
+    }
+}
+.dust{
+
+    position:fixed;
+
+    width:4px;
+    height:4px;
+
+    background:#fff4c7;
+
+    border-radius:50%;
+
+    opacity:0.4;
+
+    animation:
+    dustFloat 8s linear infinite;
+}
+
+@keyframes dustFloat{
+
+    from{
+
+        transform:
+        translateY(100vh);
+    }
+
+    to{
+
+        transform:
+        translateY(-100px);
+    }
+}
+body.vintage .container::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(
+
+        circle at center,
+
+        rgba(255,220,120,0.15),
+
+        transparent 60%
+
+    );
+
+    animation:
+    lanternGlow 5s ease-in-out infinite;
+}
+@keyframes lanternGlow{
+
+    0%,100%{
+
+        opacity:0.6;
+    }
+
+    50%{
+
+        opacity:1;
+    }
+}
+body.vintage .Todoapp{
+
+    animation:
+    paperFloat 6s ease-in-out infinite;
+}
+@keyframes paperFloat{
+
+    0%,100%{
+
+        transform:
+        translateY(0px);
+    }
+
+    50%{
+
+        transform:
+        translateY(-12px);
+    }
+}
+/* =========================
+   GIRLY THEME
+========================= */
+
+body.girly .container{
+
+    background:
+    url("images/girlybg.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+}
+body.girly .Todoapp{
+
+    background:
+    rgba(255,255,255,0.35);
+
+    backdrop-filter:
+    blur(15px);
+
+    border:
+    2px solid rgba(
+        255,
+        255,
+        255,
+        0.4
+    );
+
+    box-shadow:
+    0 10px 40px
+    rgba(
+        255,
+        182,
+        193,
+        0.35
+    );
+}
+body.girly .h2{
+
+    color:#d63384;
+}
+body.girly .create-task{
+
+    background:
+    rgba(
+        255,
+        255,
+        255,
+        0.5
+    );
+}
+body.girly .create-task{
+
+    background:
+    rgba(
+        255,
+        255,
+        255,
+        0.5
+    );
+}
+body.girly input,
+body.girly select{
+
+    background:
+    rgba(
+        255,
+        255,
+        255,
+        0.6
+    );
+}
+body.girly .add{
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff85c1,
+        #c084fc
+    );
+}
+body.girly .stats div{
+
+    background:
+    rgba(
+        255,
+        255,
+        255,
+        0.55
+    );
+
+    backdrop-filter:
+    blur(8px);
+}
+body.girly .progress-bar{
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff85c1,
+        #ffd166
+    );
+}
+body.girly ul li{
+
+    background:
+    rgba(
+        255,
+        255,
+        255,
+        0.65
+    );
+
+    border-left:
+    6px solid
+    #ffb6c1;
+}
+body.girly #clearAll{
+
+    background:
+    #ff8fab;
+}
+body.girly #undoBtn{
+
+    background:
+    #c084fc;
+}
+body.girly ul li:hover{
+
+    transform:
+    translateY(-4px);
+
+    box-shadow:
+    0 10px 25px
+    rgba(
+        255,
+        182,
+        193,
+        0.4
+    );
+}
+body.girly .Todoapp{
+
+    animation:
+    floatCard 5s ease-in-out infinite;
+}
+@keyframes floatCard{
+
+    0%{
+
+        transform:
+        translateY(0px);
+    }
+
+    50%{
+
+        transform:
+        translateY(-16px);
+
+    }
+
+    100%{
+
+        transform:
+        translateY(0px);
+    }
+}
+body.girly .Todoapp{
+
+    box-shadow:
+
+    0 0 30px
+    rgba(
+        255,
+        182,
+        193,
+        0.35
+    ),
+
+    0 10px 40px
+    rgba(
+        255,
+        182,
+        193,
+        0.25
+    );
+}
+.bow{
+
+    position:fixed;
+
+    top:-50px;
+
+    font-size:28px;
+
+    z-index:9999;
+
+    pointer-events:none;
+
+    animation:
+    bowFall 10s linear forwards;
+}
+
+@keyframes bowFall{
+
+    from{
+
+        transform:
+        translateY(-50px)
+        rotate(0deg);
+    }
+
+    to{
+
+        transform:
+        translateY(110vh)
+        translateX(50px)
+        rotate(360deg);
+    }
+}
+body.girly .Todoapp{
+    animation: floatCard 5s ease-in-out infinite;
+}
+
+@keyframes floatCard{
+    0%,100%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+}
+body.girly .add{
+
+    box-shadow:
+    0 0 15px rgba(255,105,180,0.4);
+
+    animation:
+    glowPink 2s ease-in-out infinite;
+}
+
+@keyframes glowPink{
+
+    0%,100%{
+        box-shadow:
+        0 0 15px rgba(255,105,180,0.4);
+    }
+
+    50%{
+        box-shadow:
+        0 0 30px rgba(255,105,180,0.8);
+    }
+}
+body.girly ul li:hover{
+
+    transform:
+    translateY(-5px)
+    scale(1.02);
+
+    transition:0.3s;
+}
+body.girly .progress-bar{
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff85c1,
+        #ffd166,
+        #ff85c1
+    );
+
+    background-size:
+    200% 100%;
+
+    animation:
+    progressGlow 4s linear infinite;
+}
+
+@keyframes progressGlow{
+
+    0%{
+        background-position:
+        0% 50%;
+    }
+
+    100%{
+        background-position:
+        200% 50%;
+    }
+}
+
+body.girly .Todoapp{
+
+    backdrop-filter:
+    blur(50px);
+}
+.sparkle{
+
+    position:fixed;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+    font-size:18px;
+
+    animation:
+    sparkleFade 1s linear forwards;
+}
+
+@keyframes sparkleFade{
+
+    0%{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+        translateY(-25px)
+        scale(1.5);
+    }
+}
+/*harrypotter*/
+body.harry{
+
+    background:
+    url("images/harrybg.jpg")
+    center center / cover
+    no-repeat fixed;
+}
+
+body.harry .container{
+
+    min-height:100vh;
+
+    background:transparent;
+}
+.magic-particle{
+
+    position:fixed;
+
+    color:#ffd700;
+
+    font-size:18px;
+
+    pointer-events:none;
+
+    animation:
+    magicFloat 5s linear forwards;
+}
+
+@keyframes magicFloat{
+
+    from{
+
+        transform:
+        translateY(100vh);
+
+        opacity:0;
+    }
+
+    20%{
+
+        opacity:1;
+    }
+
+    to{
+
+        transform:
+        translateY(-100px);
+
+        opacity:0;
+    }
+}
+body.harry .Todoapp{
+
+    background:
+    rgba(28,24,45,.82);
+
+    backdrop-filter:
+    blur(10px);
+
+    border:
+    2px solid #d4af37;
+
+    
+
+    box-shadow:
+    0 0 35px rgba(212,175,55,.35);
+}
+body.harry .h2{
+    color:#f8e27c;
+    font-family:"Times New Roman",serif;
+    letter-spacing:2px;
+    text-shadow:
+        0 0 10px rgba(248,226,124,0.8);
+}
+body.harry #progressText{
+    color:#f8e27c;
+    text-shadow:
+        0 0 8px rgba(248,226,124,0.6);
+}
+body.harry .progress-bar{
+
+    background:
+    linear-gradient(
+        90deg,
+        #d4af37,
+        #f8e27c,
+        #d4af37
+    );
+
+    box-shadow:
+        0 0 15px #d4af37;
+}   
+body.harry input,
+body.harry select{
+
+    background:
+    rgba(255,255,255,.08);
+
+    
+
+    border:
+    1px solid rgba(212,175,55,.3);
+}
+body.harry .add{
+
+    background:
+    linear-gradient(
+        135deg,
+        #d4af37,
+        #f8e27c
+    );
+
+    color:#222;
+}
+body.harry #undoBtn{
+
+    background:#3a2f5f;
+}
+
+body.harry #clearAll{
+
+    background:#7f1d1d;
+}
+.rain{
+
+    position:fixed;
+
+    top:-100px;
+
+    width:2px;
+
+    height:80px;
+
+    background:
+    linear-gradient(
+        transparent,
+        rgba(255,255,255,.9)
+    );
+
+    opacity:.7;
+
+    pointer-events:none;
+
+    z-index:999;
+
+    animation:
+    rainFall .7s linear forwards;
+}
+
+@keyframes rainFall{
+
+    from{
+
+        transform:
+        translateY(0)
+        translateX(0);
+    }
+
+    to{
+
+        transform:
+        translateY(120vh)
+        translateX(-50px);
+    }
+}
+.torch{
+
+    position:fixed;
+
+    width:250px;
+
+    height:250px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(255,215,100,0.6),
+        transparent
+    );
+
+    z-index:999;
+}
+body.harry::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,0.35);
+
+    pointer-events:none;
+
+    z-index:-1;
+}
+.flying-harry{
+
+    position:fixed;
+
+    left:-250px;
+
+    bottom:-100px;
+
+    z-index:5;
+
+    pointer-events:none;
+
+    animation:
+    flyHarry 12s linear forwards;
+}
+
+@keyframes flyHarry{
+
+    0%{
+
+        transform:
+        translate(0,0)
+        rotate(-10deg);
+    }
+
+    100%{
+
+        transform:
+        translate(
+            140vw,
+            -120vh
+        )
+        rotate(10deg);
+    }
+    .Todoapp{
+    position:relative;
+    z-index:50;
+}
+
+}
+.lightning{
+
+    position:fixed;
+
+    inset:0;
+
+    background:white;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:5000;
+}
+
+.lightning.flash{
+
+    animation:
+    lightningFlash .4s;
+}
+
+@keyframes lightningFlash{
+
+    0%{opacity:0;}
+
+    20%{opacity:.8;}
+
+    40%{opacity:.1;}
+
+    60%{opacity:.6;}
+
+    100%{opacity:0;}
+}
+/* =====================================
+   TABLET + SMALL LAPTOPS
+===================================== */
+
+@media (max-width:650px){
+
+    .Todoapp{
+
+        width:95%;
+
+        padding:20px;
+
+        margin:20px auto;
+    }
+
+    /* HEADER */
+
+    .header{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        text-align:center;
+    }
+
+    .h2{
+
+        justify-content:center;
+
+        font-size:30px;
+    }
+
+    /* INPUT ROW */
+
+    .row{
+
+        flex-direction:column;
+
+        background:none;
+
+        padding:0;
+
+        gap:12px;
+    }
+
+    #input-box{
+
+        width:100%;
+
+        border-radius:12px;
+
+        background:#f3f4f6;
+    }
+
+    .add{
+
+        width:100%;
+    }
+
+    /* TASK OPTIONS */
+
+    .task-options{
+
+        grid-template-columns:1fr;
+    }
+
+    /* SEARCH + SORT */
+
+    .search-sort{
+
+        flex-direction:column;
+
+        gap:10px;
+    }
+
+    #searchTask,
+    #sortTasks{
+
+        width:100%;
+    }
+
+    /* ACTION BUTTONS */
+
+    .action-buttons{
+
+        flex-direction:column;
+    }
+
+    .action-buttons button{
+
+        width:100%;
+    }
+
+}
+
+/* =====================================
+   MOBILE DEVICES
+===================================== */
+
+@media (max-width:480px){
+
+    html,
+    body{
+
+        overflow-x:hidden;
+    }
+
+    .container{
+
+        padding:10px;
+    }
+
+    .Todoapp{
+
+        width:100%;
+
+        padding:12px;
+
+        border-radius:18px;
+    }
+
+    /* TITLE */
+
+    .h2{
+
+        font-size:22px;
+
+        flex-wrap:wrap;
+
+        text-align:center;
+    }
+
+    .img1{
+
+        width:40px;
+
+        height:40px;
+    }
+
+    /* THEME SELECTOR */
+
+    #themeSelector{
+
+        width:150px;
+
+        font-size:12px;
+    }
+
+    /* STATS */
+
+    .stats{
+
+        grid-template-columns:
+        repeat(3,1fr);
+
+        gap:6px;
+    }
+
+    .stats div{
+
+        padding:8px;
+
+        font-size:12px;
+    }
+
+    .stats span{
+
+        font-size:16px;
+    }
+
+    /* TASK CARDS */
+
+    ul li{
+
+        padding:
+        12px
+        35px
+        12px
+        40px;
+
+        font-size:13px;
+    }
+
+    ul li strong{
+
+        font-size:18px;
+    }
+
+    ul li::before{
+
+        width:20px;
+
+        height:20px;
+
+        left:10px;
+
+        top:14px;
+    }
+
+    ul li span{
+
+        width:24px;
+
+        height:24px;
+
+        line-height:24px;
+
+        font-size:16px;
+    }
+
+    /* PROGRESS */
+
+    #progressText{
+
+        font-size:14px;
+    }
+
+    /* HARRY POTTER EFFECTS */
+
+    .torch{
+
+        width:100px;
+
+        height:100px;
+    }
+
+    .flying-harry{
+
+        display:none;
+    }
+
+    .bow{
+
+        font-size:18px;
+    }
+
+}
