@@ -45,7 +45,8 @@ let tasks =
 JSON.parse(
     localStorage.getItem("tasks")
 ) || [];
-
+let magicInterval = null;
+let lightningInterval = null;
 // TIMESTAMP
 
 function getTimestamp(){
@@ -554,95 +555,114 @@ function(){
     renderTasks();
 
 });
+//clear animations
+function clearAnimations(){
+
+    document.querySelectorAll(".paper-piece")
+    .forEach(item => item.remove());
+
+    document.querySelectorAll(".bow")
+    .forEach(item => item.remove());
+
+    document.querySelectorAll(".rain")
+    .forEach(item => item.remove());
+
+    document.querySelectorAll(".magic-particle")
+    .forEach(item => item.remove());
+
+    document.querySelectorAll(".flying-harry")
+    .forEach(item => item.remove());
+
+    document.querySelectorAll(".sparkle")
+    .forEach(item => item.remove());
+
+}
 //applytheme
+//applytheme
+
 function applyTheme(theme){
 
+    // Remove old animations
+
+    clearAnimations();
+
+    // Change theme
 
     document.body.className = theme;
-   //stop old harry animation
-    if(harryInterval){
 
-    clearInterval(
-        harryInterval
-    );
-
-    harryInterval = null;
-}
-//lightning
-if(theme === "harry"){
-
-    setInterval(
-        triggerLightning,
-        4000 + Math.random()*8000
-    );
-
-}
-
-//harry fly
-if(theme === "harry"){
-
-    harryInterval =
-    setInterval(
-
-        createHarryFly,
-
-        15000
-
-    );
-
-}
-    //magic 
-    magicInterval =
-setInterval(
-    createMagicParticle,
-    400
-);
-//torch -harry
-const torch =
-document.querySelector(".torch");
-
-if(theme === "harry"){
-
-    torch.style.display = "block";
-
-}
-else{
-
-    torch.style.display = "none";
-
-}
-    //stop harry
-if(rainInterval){
-
-    clearInterval(
-        rainInterval
-    );
-
-    rainInterval = null;
-}
-    // stop vintage
+    // Stop Vintage
 
     if(paperInterval){
 
-        clearInterval(
-            paperInterval
-        );
+        clearInterval(paperInterval);
 
         paperInterval = null;
+
     }
 
-    // stop girly
+    // Stop Girly
 
     if(bowInterval){
 
-        clearInterval(
-            bowInterval
-        );
+        clearInterval(bowInterval);
 
         bowInterval = null;
+
     }
 
-    // vintage
+    // Stop Rain
+
+    if(rainInterval){
+
+        clearInterval(rainInterval);
+
+        rainInterval = null;
+
+    }
+
+    // Stop Flying Harry
+
+    if(harryInterval){
+
+        clearInterval(harryInterval);
+
+        harryInterval = null;
+
+    }
+
+    // Stop Magic
+
+    if(magicInterval){
+
+        clearInterval(magicInterval);
+
+        magicInterval = null;
+
+    }
+
+    // Stop Lightning
+
+    if(lightningInterval){
+
+        clearInterval(lightningInterval);
+
+        lightningInterval = null;
+
+    }
+
+    // Torch
+
+    const torch =
+    document.querySelector(".torch");
+
+    torch.style.display =
+    theme === "harry"
+    ? "block"
+    : "none";
+
+    // -----------------
+
+    // Vintage
 
     if(theme === "vintage"){
 
@@ -651,9 +671,12 @@ if(rainInterval){
             createPaper,
             1200
         );
+
     }
 
-    // girly
+    // -----------------
+
+    // Girly
 
     if(theme === "girly"){
 
@@ -662,16 +685,40 @@ if(rainInterval){
             createBow,
             1100
         );
-    }
-    //harrypotter
-    if(theme==="harry"){
 
-   rainInterval =
-setInterval(
-    createRain,
-    20
-);
-}
+    }
+
+    // -----------------
+
+    // Harry Potter
+
+    if(theme === "harry"){
+
+        rainInterval =
+        setInterval(
+            createRain,
+            20
+        );
+
+        harryInterval =
+        setInterval(
+            createHarryFly,
+            15000
+        );
+
+        magicInterval =
+        setInterval(
+            createMagicParticle,
+            400
+        );
+
+        lightningInterval =
+        setInterval(
+            triggerLightning,
+            6000
+        );
+
+    }
 
 }
 //changing theme
@@ -1022,6 +1069,7 @@ function triggerLightning(){
     },400);
 
 }
+
 // INITIAL LOAD
 
 showTask();
